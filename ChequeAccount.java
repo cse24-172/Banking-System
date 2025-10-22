@@ -6,7 +6,6 @@ public class ChequeAccount extends Account {
     
     @Override
     public boolean withdraw(double amount) {
-        // Assignment: "allows deposits and withdrawals of any amount"
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             System.out.println("Withdrawn: BWP " + amount + " from Cheque Account. New balance: BWP " + balance);
@@ -22,14 +21,12 @@ public class ChequeAccount extends Account {
     
     @Override
     public void payMonthlyInterest() {
-        // Assignment doesn't mention interest for cheque accounts
-        System.out.println("No interest paid on Cheque Accounts");
+        System.out.println("No interest paid on Cheque Accounts. Current balance: BWP " + balance);
     }
     
     @Override
     public boolean canOpenAccount() {
-        // Assignment: "can only be opened for any person who is working"
-        if (customer.getEmploymentCompany() != null && !customer.getEmploymentCompany().trim().isEmpty()) {
+        if (customer.isEmployed()) {
             return true;
         } else {
             System.out.println("Cheque account can only be opened for employed individuals");

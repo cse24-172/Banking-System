@@ -1,6 +1,5 @@
-
 public class SavingsAccount extends Account {
-    private static final double MONTHLY_INTEREST_RATE = 0.0005; // 0.05% as per assignment
+    private static final double MONTHLY_INTEREST_RATE = 0.0005; // 0.05%
     
     public SavingsAccount(String accountNumber, double initialBalance, String branch, Customer customer) {
         super(accountNumber, initialBalance, branch, customer, "Savings");
@@ -8,7 +7,6 @@ public class SavingsAccount extends Account {
     
     @Override
     public boolean withdraw(double amount) {
-        // Assignment explicitly says: "This account does not allow any withdrawals from it"
         System.out.println("ERROR: Withdrawals are not allowed from Savings Accounts");
         return false;
     }
@@ -17,12 +15,11 @@ public class SavingsAccount extends Account {
     public void payMonthlyInterest() {
         double interest = balance * MONTHLY_INTEREST_RATE;
         balance += interest;
-        System.out.println("Monthly interest of BWP " + interest + " paid to Savings Account. New balance: BWP " + balance);
+        System.out.println("Monthly interest of BWP " + String.format("%.2f", interest) + " paid to Savings Account. New balance: BWP " + String.format("%.2f", balance));
     }
     
     @Override
     public boolean canOpenAccount() {
-        // Savings account can be opened by anyone with any initial amount
         return true;
     }
 }

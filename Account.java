@@ -13,7 +13,6 @@ public abstract class Account {
         this.accountType = accountType;
     }
     
-    // Common methods for all accounts
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -23,7 +22,7 @@ public abstract class Account {
         }
     }
     
-    // Abstract methods for account-specific behavior
+    // Abstract methods
     public abstract boolean withdraw(double amount);
     public abstract void payMonthlyInterest();
     public abstract boolean canOpenAccount();
@@ -37,11 +36,7 @@ public abstract class Account {
     
     @Override
     public String toString() {
-        return accountType + " Account{" +
-                "accountNumber='" + accountNumber + '\'' +
-                ", balance=BWP " + balance +
-                ", branch='" + branch + '\'' +
-                ", customer=" + customer.getFirstName() + " " + customer.getSurname() +
-                '}';
+        return accountType + " Account{Number='" + accountNumber + "', Balance=BWP " + balance + 
+               ", Branch='" + branch + "', Customer='" + customer.getFirstName() + " " + customer.getSurname() + "'}";
     }
 }

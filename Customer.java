@@ -1,50 +1,42 @@
 public class Customer {
+    private String customerId;
     private String firstName;
     private String surname;
     private String address;
-    private String customerId;
-    private String employmentCompany; // Specific for cheque accounts
-    private String companyAddress;    // Specific for cheque accounts
+    private String idNumber;
+    private String employmentCompany;
+    private String companyAddress;
     
-    public Customer(String firstName, String surname, String address, String customerId) {
+    public Customer(String customerId, String firstName, String surname, String address, String idNumber) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.surname = surname;
         this.address = address;
-        this.customerId = customerId;
+        this.idNumber = idNumber;
     }
     
-    // Getters and setters
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public Customer(String customerId, String firstName, String surname, String address, 
+                   String idNumber, String employmentCompany, String companyAddress) {
+        this(customerId, firstName, surname, address, idNumber);
+        this.employmentCompany = employmentCompany;
+        this.companyAddress = companyAddress;
+    }
     
-    public String getSurname() { return surname; }
-    public void setSurname(String surname) { this.surname = surname; }
-    
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
-    
+    // Getters
     public String getCustomerId() { return customerId; }
-    public void setCustomerId(String customerId) { this.customerId = customerId; }
-    
+    public String getFirstName() { return firstName; }
+    public String getSurname() { return surname; }
+    public String getAddress() { return address; }
+    public String getIdNumber() { return idNumber; }
     public String getEmploymentCompany() { return employmentCompany; }
-    public void setEmploymentCompany(String employmentCompany) { this.employmentCompany = employmentCompany; }
-    
     public String getCompanyAddress() { return companyAddress; }
-    public void setCompanyAddress(String companyAddress) { this.companyAddress = companyAddress; }
     
-    // Method to set employment info for cheque accounts
-    public void setEmploymentInfo(String company, String address) {
-        this.employmentCompany = company;
-        this.companyAddress = address;
+    public boolean isEmployed() {
+        return employmentCompany != null && !employmentCompany.trim().isEmpty();
     }
     
     @Override
     public String toString() {
-        return "Customer{" +
-                "firstName='" + firstName + '\'' +
-                ", surname='" + surname + '\'' +
-                ", address='" + address + '\'' +
-                ", customerId='" + customerId + '\'' +
-                '}';
+        return "Customer{ID='" + customerId + "', Name='" + firstName + " " + surname + "', Address='" + address + "'}";
     }
 }

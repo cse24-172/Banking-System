@@ -1,0 +1,22 @@
+cat > src/view/dashboard.fxml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.DashboardController">
+   <top>
+      <Label text="Banking Dashboard" style="-fx-font-size: 20; -fx-padding: 15; -fx-background-color: #333; -fx-text-fill: white;"/>
+   </top>
+   <left>
+      <VBox spacing="10" style="-fx-padding: 15;">
+         <Button text="View Accounts" onAction="#handleViewAccounts"/>
+         <Button text="Pay Interest" onAction="#handlePayInterest"/>
+         <Button text="Logout" onAction="#handleLogout"/>
+      </VBox>
+   </left>
+   <center>
+      <Label text="Welcome! Use buttons on left." style="-fx-padding: 20; -fx-font-size: 16;"/>
+   </center>
+</BorderPane>
+EOF
