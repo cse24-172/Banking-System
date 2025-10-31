@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="src.controller.DashboardController">
+   <top>
+      <VBox style="-fx-background-color: #34495e;">
+         <HBox alignment="CENTER_LEFT" style="-fx-padding: 15;">
+            <Label fx:id="welcomeLabel" text="Welcome" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Logout" onAction="#handleLogout" 
+                   style="-fx-background-color: #e74c3c; -fx-text-fill: white;" />
+         </HBox>
+         <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Account Overview">
+               <ScrollPane fitToWidth="true">
+                  <VBox spacing="15" style="-fx-padding: 20;">
+                     <Label text="My Accounts" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                     <TableView fx:id="accountsTable" prefHeight="200.0">
+                        <columns>
+                           <TableColumn text="Account Number" prefWidth="150">
+                              <cellValueFactory><PropertyValueFactory property="accountNumber" /></cellValueFactory>
+                           </TableColumn>
+                           <TableColumn text="Type" prefWidth="120">
+                              <cellValueFactory><PropertyValueFactory property="type" /></cellValueFactory>
+                           </TableColumn>
+                           <TableColumn text="Balance" prefWidth="120">
+                              <cellValueFactory><PropertyValueFactory property="balance" /></cellValueFactory>
+                           </TableColumn>
+                           <TableColumn text="Branch" prefWidth="150">
+                              <cellValueFactory><PropertyValueFactory property="branch" /></cellValueFactory>
+                           </TableColumn>
+                        </columns>
+                     </TableView>
+                     
+                     <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Button text="Open New Account" onAction="#handleOpenAccount" 
+                               style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+                        <Button text="Refresh" onAction="#handleRefresh" 
+                               style="-fx-background-color: #95a5a6; -fx-text-fill: white;" />
+                     </HBox>
+                  </VBox>
+               </ScrollPane>
+            </Tab>
+            
+            <Tab text="Transactions">
+               <ScrollPane fitToWidth="true">
+                  <VBox spacing="15" style="-fx-padding: 20;">
+                     <Label text="Account Transactions" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                     
+                     <HBox spacing="15" alignment="CENTER_LEFT">
+                        <ComboBox fx:id="accountSelector" promptText="Select Account" />
+                        <Button text="Show Transactions" onAction="#handleShowTransactions" 
+                               style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+                     </HBox>
+                     
+                     <TableView fx:id="transactionsTable" prefHeight="300.0">
+                        <columns>
+                           <TableColumn text="Date" prefWidth="150" />
+                           <TableColumn text="Type" prefWidth="100" />
+                           <TableColumn text="Amount" prefWidth="120" />
+                           <TableColumn text="Description" prefWidth="200" />
+                        </columns>
+                     </TableView>
+                     
+                     <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Button text="Make Deposit" onAction="#handleDeposit" 
+                               style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+                        <Button text="Make Withdrawal" onAction="#handleWithdrawal" 
+                               style="-fx-background-color: #e67e22; -fx-text-fill: white;" />
+                     </HBox>
+                  </VBox>
+               </ScrollPane>
+            </Tab>
+            
+            <Tab text="Customer Info">
+               <ScrollPane fitToWidth="true">
+                  <VBox spacing="15" style="-fx-padding: 20;">
+                     <Label text="Customer Information" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                     <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                           <ColumnConstraints halignment="RIGHT" prefWidth="150" />
+                           <ColumnConstraints halignment="LEFT" prefWidth="250" />
+                        </columnConstraints>
+                        
+                        <Label text="Customer ID:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <Label fx:id="custIdLabel" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                        
+                        <Label text="Name:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                        <Label fx:id="nameLabel" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        
+                        <Label text="Address:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                        <Label fx:id="addressLabel" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                        
+                        <Label text="ID Number:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                        <Label fx:id="idNumberLabel" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                        
+                        <Label text="Employment:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                        <Label fx:id="employmentLabel" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                     </GridPane>
+                  </VBox>
+               </ScrollPane>
+            </Tab>
+         </TabPane>
+      </VBox>
+   </top>
+</BorderPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="src.controller.CustomerController">
+   <center>
+      <ScrollPane fitToWidth="true">
+         <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-padding: 20;">
+            <Label text="Customer Registration" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            
+            <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 30; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;">
+               <Label text="Personal Information" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+               
+               <GridPane hgap="10" vgap="15">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" prefWidth="120" />
+                     <ColumnConstraints halignment="LEFT" prefWidth="250" />
+                  </columnConstraints>
+                  
+                  <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                  <TextField fx:id="firstNameField" promptText="First Name" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                  
+                  <Label text="Surname:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                  <TextField fx:id="surnameField" promptText="Surname" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                  
+                  <Label text="Address:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                  <TextField fx:id="addressField" promptText="Address" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                  
+                  <Label text="ID Number:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                  <TextField fx:id="idNumberField" promptText="ID Number" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+               </GridPane>
+               
+               <Separator />
+               
+               <Label text="Employment Information (Required for Cheque Accounts)" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+               
+               <CheckBox fx:id="employedCheckBox" text="I am employed" onAction="#handleEmploymentToggle" />
+               
+               <GridPane fx:id="employmentGrid" hgap="10" vgap="15" visible="false">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" prefWidth="120" />
+                     <ColumnConstraints halignment="LEFT" prefWidth="250" />
+                  </columnConstraints>
+                  
+                  <Label text="Employer:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                  <TextField fx:id="employerField" promptText="Employer Name" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                  
+                  <Label text="Employer Address:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                  <TextField fx:id="employerAddressField" promptText="Employer Address" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+               </GridPane>
+               
+               <HBox spacing="15" alignment="CENTER">
+                  <Button text="Register" onAction="#handleRegister" 
+                         style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 120;" />
+                  <Button text="Back to Login" onAction="#handleBackToLogin" 
+                         style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-pref-width: 120;" />
+               </HBox>
+               
+               <Label fx:id="messageLabel" style="-fx-text-fill: red;" />
+            </VBox>
+         </VBox>
+      </ScrollPane>
+   </center>
+</BorderPane>

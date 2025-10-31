@@ -1,22 +1,21 @@
+package src;
+
 public class InvestmentAccount extends Account {
     private static final double MONTHLY_INTEREST_RATE = 0.05; // 5%
-    private static final double MINIMUM_OPENING_BALANCE = 500.00;
+    private static final double MIN_OPENING_BALANCE = 500.0;
     
-    public InvestmentAccount(String accountNumber, double initialBalance, String branch, Customer customer) {
-        super(accountNumber, initialBalance, branch, customer, "Investment");
+    public InvestmentAccount(String accountNumber, double balance, String branch, Customer customer) {
+        super(accountNumber, balance, branch, customer, "Investment");
     }
     
     @Override
     public boolean withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("Withdrawn: BWP " + amount + " from Investment Account. New balance: BWP " + balance);
+            System.out.println("✓ Withdrawn: BWP " + amount + " from Investment Account. New balance: BWP " + balance);
             return true;
-        } else if (amount > balance) {
-            System.out.println("Insufficient funds in Investment Account");
-            return false;
         } else {
-            System.out.println("Withdrawal amount must be positive");
+            System.out.println("✗ Invalid withdrawal amount or insufficient funds");
             return false;
         }
     }
@@ -25,15 +24,17 @@ public class InvestmentAccount extends Account {
     public void payMonthlyInterest() {
         double interest = balance * MONTHLY_INTEREST_RATE;
         balance += interest;
-        System.out.println("Monthly interest of BWP " + String.format("%.2f", interest) + " paid to Investment Account. New balance: BWP " + String.format("%.2f", balance));
+        System.out.println("✓ Investment Account interest: BWP " + String.format("%.2f", interest) + 
+                          " paid to " + accountNumber + ". New balance: BWP " + String.format("%.2f", balance));
     }
     
     @Override
     public boolean canOpenAccount() {
-        if (balance >= MINIMUM_OPENING_BALANCE) {
+        if (balance >= MIN_OPENING_BALANCE) {
+            System.out.println("✓ Investment account opening requirements met");
             return true;
         } else {
-            System.out.println("Investment account requires minimum BWP " + MINIMUM_OPENING_BALANCE + " to open");
+            System.out.println("✗ Investment account requires minimum BWP " + MIN_OPENING_BALANCE + " to open");
             return false;
         }
     }

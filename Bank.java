@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,11 @@ public class Bank {
             }
         }
         return null;
+    }
+    
+    // GUI compatibility method
+    public Customer findCustomer(String customerId) {
+        return findCustomerById(customerId);
     }
     
     public boolean openSavingsAccount(String accountNumber, double initialBalance, String branch, Customer customer) {
@@ -107,6 +114,25 @@ public class Bank {
         for (Account account : accounts) {
             account.payMonthlyInterest();
         }
+    }
+    
+    // GUI Methods
+    public List<Account> getAccountsForCustomer(String customerId) {
+        List<Account> customerAccounts = new ArrayList<>();
+        for (Account account : accounts) {
+            if (account.getCustomer().getCustomerId().equals(customerId)) {
+                customerAccounts.add(account);
+            }
+        }
+        return customerAccounts;
+    }
+    
+    public List<Customer> getAllCustomers() {
+        return new ArrayList<>(customers);
+    }
+    
+    public List<Account> getAllAccounts() {
+        return new ArrayList<>(accounts);
     }
     
     public void displayAllCustomers() {

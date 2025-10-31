@@ -1,3 +1,5 @@
+package src;
+
 public abstract class Account {
     protected String accountNumber;
     protected double balance;
@@ -16,9 +18,9 @@ public abstract class Account {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("Deposited: BWP " + amount + " to " + accountType + " Account. New balance: BWP " + balance);
+            System.out.println("✓ Deposited: BWP " + amount + " to " + accountType + " Account. New balance: BWP " + balance);
         } else {
-            System.out.println("Deposit amount must be positive");
+            System.out.println("✗ Deposit amount must be positive");
         }
     }
     
@@ -27,12 +29,21 @@ public abstract class Account {
     public abstract void payMonthlyInterest();
     public abstract boolean canOpenAccount();
     
-    // Getters
+    // Getters for core functionality
     public double getBalance() { return balance; }
     public String getAccountNumber() { return accountNumber; }
     public String getBranch() { return branch; }
     public Customer getCustomer() { return customer; }
     public String getAccountType() { return accountType; }
+    
+    // GUI-specific getters
+    public String getType() {
+        // Return simplified type name for GUI display
+        if (this instanceof SavingsAccount) return "Savings";
+        if (this instanceof InvestmentAccount) return "Investment";
+        if (this instanceof ChequeAccount) return "Cheque";
+        return accountType;
+    }
     
     @Override
     public String toString() {
