@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.LoginController"
+           prefWidth="900" prefHeight="600"
+           style="-fx-background-color: linear-gradient(to bottom right, #DCEBFF, #F0F7FF);">
+
+    <!-- Center Login Card -->
+    <VBox alignment="CENTER" spacing="20"
+          style="-fx-background-color: rgba(255,255,255,0.9);
+                 -fx-background-radius: 20;
+                 -fx-padding: 35 50;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 25, 0.2, 0, 5);"
+          maxWidth="500">
+
+        <!-- Title -->
+        <Label text="Leresaa Banking System"
+               style="-fx-font-size: 26px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #1E3A8A;" />
+
+        <!-- Input Fields -->
+        <VBox alignment="CENTER" spacing="12">
+
+            <TextField fx:id="usernameField" promptText="Username"
+                       prefWidth="320" prefHeight="40"
+                       style="-fx-background-color: #F0F9FF;
+                              -fx-background-radius: 10;
+                              -fx-border-color: #3B82F6;
+                              -fx-border-width: 2;
+                              -fx-border-radius: 10;
+                              -fx-font-size: 15px;" />
+
+            <PasswordField fx:id="passwordField" promptText="Password"
+                           prefWidth="320" prefHeight="40"
+                           style="-fx-background-color: #F0F9FF;
+                                  -fx-background-radius: 10;
+                                  -fx-border-color: #3B82F6;
+                                  -fx-border-width: 2;
+                                  -fx-border-radius: 10;
+                                  -fx-font-size: 15px;" />
+
+        </VBox>
+
+        <!-- Login Button -->
+        <Button fx:id="loginBtn" text="Login"
+                prefWidth="200" prefHeight="40"
+                style="-fx-background-radius: 12;
+                       -fx-background-color: linear-gradient(to right, #1E40AF, #3B82F6);
+                       -fx-text-fill: white;
+                       -fx-font-size: 17px;
+                       -fx-font-weight: bold;" />
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel"
+               style="-fx-text-fill: #DC2626;
+                      -fx-font-size: 13px;
+                      -fx-font-weight: bold;" />
+
+        <!-- Admin Info -->
+        <Label text="Admin Login: admin | Password: admin123"
+               style="-fx-text-fill: #6B7280;
+                      -fx-font-size: 12px;
+                      -fx-font-style: italic;"
+               alignment="CENTER" />
+
+    </VBox>
+
+</StackPane>

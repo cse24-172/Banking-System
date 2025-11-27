@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.OpenAdditionalAccountController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding:30; -fx-background-color:white;"
+      prefWidth="450">
+
+    <Label text="Open New Account"
+           style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+
+    <ChoiceBox fx:id="accountTypeBox" prefWidth="250"/>
+
+    <TextField fx:id="depositField" prefWidth="250"
+               promptText="Initial Deposit (Optional)"/>
+
+    <Label fx:id="statusLabel" style="-fx-text-fill:red;"/>
+
+    <Button fx:id="createBtn" text="Create Account"
+            style="-fx-background-color:#1A73E8; -fx-text-fill:white;
+                   -fx-padding:10 25; -fx-font-size:16px;"/>
+
+    <Button fx:id="backBtn" text="Back"
+            style="-fx-background-color:gray; -fx-text-fill:white;
+                   -fx-padding:8 20;"/>
+
+</VBox>

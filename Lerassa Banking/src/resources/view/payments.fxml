@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.PaymentsController"
+            prefWidth="950" prefHeight="650">
+
+    <!-- HEADER -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-padding:20; -fx-background-color:white; -fx-border-color:#DDD;">
+
+            <Button fx:id="backBtn" text="← Back"
+                    style="-fx-background-color:#1A73E8; -fx-text-fill:white;
+                           -fx-padding:8 20; -fx-font-size:16px;"/>
+
+            <Label text="Payments &amp; Transfers"
+                   style="-fx-font-size:26px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+        </HBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="30" style="-fx-padding:20;">
+
+            <!-- TRANSFERS SECTION -->
+            <VBox spacing="15"
+                  style="-fx-background-color:white; -fx-padding:20;
+                         -fx-border-radius:15; -fx-background-radius:15;
+                         -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);"
+                  prefWidth="700">
+
+                <Label text="Transfer Between Accounts"
+                       style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Label text="From:"/>
+                    <ChoiceBox fx:id="fromAccountBox" prefWidth="250"/>
+
+                    <Label text="To:"/>
+                    <ChoiceBox fx:id="toAccountBox" prefWidth="250"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Label text="Amount (P):"/>
+                    <TextField fx:id="transferAmountField" prefWidth="200"/>
+                </HBox>
+
+                <Button fx:id="transferBtn" text="Transfer"
+                        style="-fx-background-color:#1A73E8; -fx-text-fill:white;
+                               -fx-font-size:18px;" prefWidth="200"/>
+
+                <Label fx:id="transferStatus" textFill="red"/>
+            </VBox>
+
+
+            <!-- BILL PAYMENT SECTION -->
+            <VBox spacing="15"
+                  style="-fx-background-color:white; -fx-padding:20;
+                         -fx-border-radius:15; -fx-background-radius:15;
+                         -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);"
+                  prefWidth="700">
+
+                <Label text="Make a Payment"
+                       style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+
+                <!-- ✔ ADDED THIS! -->
+                <Label text="Pay From Account:"/>
+                <ChoiceBox fx:id="billAccountBox" prefWidth="350"/>
+
+                <Label text="Bill Type:"/>
+                <ChoiceBox fx:id="billTypeBox" prefWidth="350"/>
+
+                <Label text="Reference / Meter Number:"/>
+                <TextField fx:id="billAccountField"
+                           promptText="Account / Meter Number"
+                           prefWidth="350"/>
+
+                <Label text="Amount (P):"/>
+                <TextField fx:id="billAmountField"
+                           promptText="Amount (P)"
+                           prefWidth="350"/>
+
+                <Button fx:id="payBtn" text="Pay Now"
+                        style="-fx-background-color:#1A73E8; -fx-text-fill:white;
+                               -fx-font-size:18px;" prefWidth="200"/>
+
+                <Label fx:id="paymentStatus" textFill="red"/>
+
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

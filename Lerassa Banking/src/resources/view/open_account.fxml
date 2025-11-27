@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane prefWidth="900" prefHeight="680" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.OpenAccountController">
+
+    <left>
+        <VBox spacing="20" style="-fx-background-color:#1A73E8; -fx-padding:20;"
+              prefWidth="250" alignment="TOP_CENTER">
+
+            <Label text="Open Account"
+                   style="-fx-font-size:22px; -fx-text-fill:white;"/>
+
+            <Button fx:id="backBtn" text="⬅  Back"
+                    style="-fx-background-color:white; -fx-text-fill:#1A73E8; -fx-font-size:16px;"
+                    prefWidth="180"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="15" style="-fx-padding:20;">
+
+            <Label text="Create Customer + Account"
+                   style="-fx-font-size:28px; -fx-text-fill:#1A73E8;"/>
+
+            <Label text="Customer Details"
+                   style="-fx-font-size:20px; -fx-text-fill:#333;"/>
+
+            <GridPane hgap="15" vgap="12">
+
+                <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="titleBox" prefWidth="120" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Full Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="fullNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Surname:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="surnameField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="National ID:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="idField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Date of Birth:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dobPicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Country:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="countryBox" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Phone:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="phoneField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                <Label text="Email:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="emailField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Label text="Address:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextField fx:id="addressField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                <!-- ADDED -->
+                <Label text="Username:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                <TextField fx:id="usernameField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+                <Label text="Password:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="passwordField" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+            <Separator prefWidth="650"/>
+
+            <Label text="Account Details"
+                   style="-fx-font-size:20px; -fx-text-fill:#333;"/>
+
+            <VBox spacing="10">
+
+                <ChoiceBox fx:id="accountTypeBox" prefWidth="250"/>
+
+                <TextField fx:id="initialDepositField"
+                           promptText="Initial deposit" prefWidth="250"/>
+
+                <TextField fx:id="employerField"
+                           promptText="Employer (Cheque Only)"
+                           prefWidth="250"/>
+            </VBox>
+
+            <Button fx:id="createBtn" text="Create Account"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <Label fx:id="statusLabel" textFill="red"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

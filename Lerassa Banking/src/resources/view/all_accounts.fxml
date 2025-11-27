@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AllAccountsController"
+            prefWidth="1000" prefHeight="700">
+
+    <!-- TOP BAR WITH BACK + TITLE -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-padding:15;">
+            <Button fx:id="backBtn"
+                    text="⬅ Back"
+                    onAction="#goBack"
+                    style="-fx-background-color:#1A73E8;
+                           -fx-text-fill:white;
+                           -fx-font-size:16px;
+                           -fx-padding:6 20;"/>
+
+            <Label text="All Accounts"
+                   style="-fx-font-size:26px; -fx-text-fill:#1A73E8;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="accountsTable">
+            <columns>
+                <TableColumn fx:id="idCol" text="Account ID" prefWidth="120"/>
+                <TableColumn fx:id="customerCol" text="Customer ID" prefWidth="120"/>
+                <TableColumn fx:id="typeCol" text="Type" prefWidth="150"/>
+                <TableColumn fx:id="balanceCol" text="Balance" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

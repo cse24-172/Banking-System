@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.CustomerDashboardController"
+            prefWidth="1100" prefHeight="700">
+
+    <!-- LEFT MENU -->
+    <left>
+        <VBox spacing="25" style="-fx-background-color:#1A73E8; -fx-padding:25;" prefWidth="260">
+
+            <VBox alignment="CENTER" spacing="10">
+                <ImageView fx:id="profileImage"
+                           fitHeight="80" fitWidth="80"
+                           preserveRatio="true"/>
+                <Label fx:id="welcomeLabel"
+                       style="-fx-text-fill:white; -fx-font-size:20px; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <Separator/>
+
+            <Button text="Open Account" fx:id="openAccountBtn" prefWidth="200"/>
+            <Button text="Deposit" fx:id="depositBtn" prefWidth="200"/>
+            <Button text="Withdraw" fx:id="withdrawBtn" prefWidth="200"/>
+            <Button text="Logout" fx:id="logoutBtn" prefWidth="200"/>
+
+        </VBox>
+    </left>
+
+    <!-- HEADER BAR -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-padding:20; -fx-background-color:white; -fx-border-color:#DDD;">
+            
+            <ImageView fx:id="bankLogo"
+                       fitHeight="65" fitWidth="65"
+                       preserveRatio="true"/>
+
+            <!-- TITLE NOW BLACK -->
+            <Label text="Lerassa Banking System"
+                   style="-fx-font-size:28px; -fx-text-fill:black; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <!-- MAIN DASHBOARD -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="30" style="-fx-padding:20;">
+
+            <!-- SMALLER TITLE -->
+            <Label text="Customer Banking Dashboard"
+                   style="-fx-font-size:26px; -fx-text-fill:#1A73E8; -fx-font-weight:bold;"/>
+
+            <!-- ROW 1 -->
+            <HBox spacing="30" alignment="CENTER">
+
+                <!-- Total Balance -->
+                <VBox alignment="CENTER"
+                      prefWidth="260" prefHeight="150"
+                      style="-fx-background-color:white; -fx-padding:20;
+                             -fx-border-radius:20; -fx-background-radius:20;
+                             -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);">
+                    <Label text="Total Balance" style="-fx-font-size:16px; -fx-text-fill:#555;"/>
+                    <Label fx:id="balanceLabel"
+                           style="-fx-font-size:34px; -fx-text-fill:#1A73E8; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <!-- My Accounts -->
+                <VBox fx:id="accountsCard" alignment="CENTER"
+                      prefWidth="260" prefHeight="150"
+                      style="-fx-background-color:white; -fx-padding:20;
+                             -fx-border-radius:20; -fx-background-radius:20;
+                             -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);
+                             -fx-cursor: hand;">
+                    <Label text="My Accounts" style="-fx-font-size:16px; -fx-text-fill:#555;"/>
+                    <Label fx:id="accountsLabel"
+                           style="-fx-font-size:34px; -fx-text-fill:#1A73E8; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <!-- Make Payments -->
+                <VBox fx:id="paymentsCard" alignment="CENTER" spacing="10"
+                      prefWidth="260" prefHeight="150"
+                      style="-fx-background-color:white; -fx-padding:20;
+                             -fx-border-radius:20; -fx-background-radius:20;
+                             -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);
+                             -fx-cursor: hand;">
+                    <Label text="Make Payments"
+                           style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+                    <Label text="Send or pay instantly" style="-fx-text-fill:#444;"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- ROW 2 -->
+            <HBox spacing="30" alignment="CENTER">
+
+                <!-- View Transactions -->
+                <VBox fx:id="transactionsCard" alignment="CENTER" spacing="10"
+                      prefWidth="260" prefHeight="150"
+                      style="-fx-background-color:white; -fx-padding:20;
+                             -fx-border-radius:20; -fx-background-radius:20;
+                             -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);
+                             -fx-cursor: hand;">
+                    <Label text="View Transactions"
+                           style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+                    <Label text="See all activity" style="-fx-text-fill:#444;"/>
+                </VBox>
+
+                <!-- Loan Inquiry -->
+                <VBox fx:id="loanCard" alignment="CENTER" spacing="10"
+                      prefWidth="260" prefHeight="150"
+                      style="-fx-background-color:white; -fx-padding:20;
+                             -fx-border-radius:20; -fx-background-radius:20;
+                             -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);
+                             -fx-cursor: hand;">
+                    <Label text="Loan Inquiry"
+                           style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+                    <Label text="Check your loan options" style="-fx-text-fill:#444;"/>
+                </VBox>
+
+                <!-- Settings -->
+                <VBox fx:id="settingsCard" alignment="CENTER" spacing="10"
+                      prefWidth="260" prefHeight="150"
+                      style="-fx-background-color:white; -fx-padding:20;
+                             -fx-border-radius:20; -fx-background-radius:20;
+                             -fx-effect:dropshadow(gaussian,#0003,10,0,0,3);
+                             -fx-cursor: hand;">
+                    <Label text="Settings"
+                           style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:#1A73E8;"/>
+                    <Label text="Manage profile &amp; security" style="-fx-text-fill:#444;"/>
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

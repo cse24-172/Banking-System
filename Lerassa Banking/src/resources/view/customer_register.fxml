@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.CustomerRegisterController"
+      spacing="25" alignment="TOP_CENTER"
+      prefWidth="480" prefHeight="620"
+      style="-fx-padding:40; -fx-background-color:white;">
+
+    <!-- TITLE -->
+    <Label text="Create Bank Account"
+           style="-fx-font-size:30px;
+                  -fx-font-weight:bold;
+                  -fx-text-fill:#1A73E8;"/>
+
+    <!-- INPUT GROUP -->
+    <VBox spacing="15" alignment="CENTER" prefWidth="340">
+
+        <TextField fx:id="firstNameField"
+                   promptText="First Name"
+                   style="-fx-font-size:16px;
+                          -fx-padding:10;
+                          -fx-background-radius:8;
+                          -fx-background-color:#F2F4F8;"/>
+
+        <TextField fx:id="surnameField"
+                   promptText="Surname"
+                   style="-fx-font-size:16px;
+                          -fx-padding:10;
+                          -fx-background-radius:8;
+                          -fx-background-color:#F2F4F8;"/>
+
+        <ChoiceBox fx:id="accountTypeBox"
+                   prefWidth="340"
+                   style="-fx-font-size:16px;"/>
+
+        <TextField fx:id="depositField"
+                   promptText="Initial Deposit"
+                   style="-fx-font-size:16px;
+                          -fx-padding:10;
+                          -fx-background-radius:8;
+                          -fx-background-color:#F2F4F8;"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Create Password"
+                       style="-fx-font-size:16px;
+                              -fx-padding:10;
+                              -fx-background-radius:8;
+                              -fx-background-color:#F2F4F8;"/>
+
+        <PasswordField fx:id="confirmPasswordField"
+                       promptText="Confirm Password"
+                       style="-fx-font-size:16px;
+                              -fx-padding:10;
+                              -fx-background-radius:8;
+                              -fx-background-color:#F2F4F8;"/>
+
+    </VBox>
+
+    <!-- CREATE BUTTON -->
+    <Button fx:id="registerBtn"
+            text="Create Account"
+            prefWidth="220"
+            style="-fx-padding:12 30;
+                   -fx-font-size:18px;
+                   -fx-background-radius:10;
+                   -fx-background-color:#1A73E8;
+                   -fx-text-fill:white;"/>
+
+    <!-- STATUS MESSAGE -->
+    <Label fx:id="statusLabel"
+           style="-fx-font-size:14px; -fx-text-fill:red;"/>
+
+    <!-- BACK BUTTON -->
+    <Button fx:id="backBtn"
+            text="Back to Login"
+            prefWidth="180"
+            style="-fx-padding:10;
+                   -fx-background-color:#444;
+                   -fx-background-radius:8;
+                   -fx-text-fill:white;"/>
+
+</VBox>

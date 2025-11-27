@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefWidth="1100" prefHeight="700"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AdminDashboardController">
+
+    <!-- LEFT SIDE MENU -->
+    <left>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              prefWidth="250"
+              style="-fx-background-color:#1A73E8; -fx-padding:20;">
+
+            <Label text="Admin Panel"
+                   style="-fx-text-fill:white; -fx-font-size:24px; -fx-font-weight:bold;"/>
+
+            <!-- CREATE CUSTOMER + ACCOUNT -->
+            <Button fx:id="createCustomerBtn" text="Create Customer"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <!-- VIEW ALL CUSTOMERS -->
+            <Button fx:id="allCustomersBtn" text="All Customers"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <!-- VIEW ALL ACCOUNTS -->
+            <Button fx:id="allAccountsBtn" text="All Accounts"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <!-- SEARCH CUSTOMER -->
+            <Button fx:id="searchCustomerBtn" text="Search Customer"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <!-- TRANSACTIONS -->
+            <Button fx:id="transactionsBtn" text="Transactions"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <!-- REPORTS (optional) -->
+            <Button fx:id="reportsBtn" text="Reports"
+                    prefWidth="200" style="-fx-font-size:16px;"/>
+
+            <!-- LOGOUT -->
+            <Button fx:id="logoutBtn" text="Logout"
+                    prefWidth="200"
+                    style="-fx-background-color:#ffffff; -fx-text-fill:#1A73E8; -fx-font-size:16px;"/>
+
+        </VBox>
+    </left>
+
+    <!-- MAIN VIEW -->
+    <center>
+        <VBox alignment="CENTER" spacing="15">
+            <Label text="Welcome Admin"
+                   style="-fx-font-size:32px; -fx-text-fill:#1A73E8;"/>
+            <Label text="Use the menu to manage customers, accounts, and transactions."
+                   style="-fx-font-size:16px; -fx-text-fill:gray;"/>
+        </VBox>
+    </center>
+
+</BorderPane>
